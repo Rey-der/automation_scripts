@@ -1,0 +1,5 @@
+{
+  "name": "Log Query",
+  "description": "Displays the latest automation log entries from the database",
+  "mainScript": "main.js"
+}
