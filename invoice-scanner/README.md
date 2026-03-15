@@ -2,6 +2,13 @@
 
 Scans a folder for PDF invoices, extracts vendor/amount/date, and stores the data in the database.
 
+## Language Variants
+
+This script is available in two languages:
+
+- **JavaScript** (Node.js): `main.js`
+- **C#** (.NET): `csharp/Program.cs`
+
 ## What it does
 
 1. Reads all `.pdf` files from the configured invoice directory
@@ -18,6 +25,18 @@ Scans a folder for PDF invoices, extracts vendor/amount/date, and stores the dat
 |---|---|---|
 | `INVOICE_DIR` | `~/Documents/Invoices` | Folder to scan for PDFs |
 
+### Run (Node.js)
+
+```bash
+node main.js
+```
+
+### Run (C#)
+
+```bash
+dotnet run --project csharp/
+```
+
 ## Database writes
 
 - `invoices` — one row per successfully extracted PDF
@@ -30,3 +49,7 @@ Scans a folder for PDF invoices, extracts vendor/amount/date, and stores the dat
 - Extracts text from text-based PDFs only (not scanned image PDFs)
 - Amount detection uses simple regex patterns — may miss unusual formats
 - Vendor name is derived from the filename, not the PDF content
+
+## Audit Documentation
+
+For formal DORA-compliant documentation, see [DOKUMENTATION.md](DOKUMENTATION.md).

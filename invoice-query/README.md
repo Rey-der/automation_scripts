@@ -2,6 +2,25 @@
 
 Displays stored invoices from the database.
 
+## Language Variants
+
+This script is available in two languages:
+
+- **JavaScript** (Node.js): `main.js`
+- **C#** (.NET): `csharp/Program.cs`
+
+### Run (Node.js)
+
+```bash
+node main.js
+```
+
+### Run (C#)
+
+```bash
+dotnet run --project csharp/
+```
+
 ## Filters
 
 Set environment variables before running to filter results:
@@ -13,3 +32,7 @@ Without filters, all invoices are returned.
 ## Output
 
 JSON array of invoice records: `id`, `vendor`, `amount`, `invoice_date`, `file_path`, `processing_timestamp`.
+
+## Audit Documentation
+
+For formal DORA-compliant documentation, see [DOKUMENTATION.md](DOKUMENTATION.md).

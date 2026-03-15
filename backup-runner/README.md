@@ -2,6 +2,13 @@
 
 Copies configured folders to a backup destination, tracking progress in the database.
 
+## Language Variants
+
+This script is available in two languages:
+
+- **JavaScript** (Node.js): `main.js`
+- **C#** (.NET): `csharp/Program.cs`
+
 ## What it does
 
 1. Reads source folders from `BACKUP_FOLDERS` env var
@@ -17,10 +24,16 @@ Copies configured folders to a backup destination, tracking progress in the data
 | `BACKUP_FOLDERS` | *(required)* | Comma-separated list of absolute folder paths |
 | `BACKUP_DEST` | `~/Backups` | Destination directory |
 
-### Example
+### Run (Node.js)
 
 ```bash
 BACKUP_FOLDERS="/Users/me/Documents,/Users/me/Projects" BACKUP_DEST="/Volumes/External/Backup" node main.js
+```
+
+### Run (C#)
+
+```bash
+BACKUP_FOLDERS="/Users/me/Documents,/Users/me/Projects" BACKUP_DEST="/Volumes/External/Backup" dotnet run --project csharp/
 ```
 
 ## Database writes
@@ -35,3 +48,7 @@ BACKUP_FOLDERS="/Users/me/Documents,/Users/me/Projects" BACKUP_DEST="/Volumes/Ex
 - `SUCCESS` — all folders backed up without error
 - `PARTIAL` — some folders failed, others succeeded
 - `FAIL` — entire backup failed (logged via execution tracking)
+
+## Audit Documentation
+
+For formal DORA-compliant documentation, see [DOKUMENTATION.md](DOKUMENTATION.md).
